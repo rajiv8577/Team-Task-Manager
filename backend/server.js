@@ -25,6 +25,10 @@ app.use('/api/users', userRoutes);
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
+app.get('/', (req, res) => {
+  res.send('API is running 🚀');
+});
+
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
